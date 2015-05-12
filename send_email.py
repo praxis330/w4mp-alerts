@@ -131,7 +131,6 @@ if __name__=="__main__":
 	job_ads_dict = get_json('jobs.json')
 	email, password = get_login('login.json')
 	emails = get_addresses('emails.json')
-	print emails
 	check_job_ads(job_ads_dict)
 	html, text = parse_email(job_ads_dict)
 	subject = 'Your w4mp alerts for %s' % TODAY

@@ -40,12 +40,12 @@ def parse(job_ads):
 
 			name = job_ad.select('div[id=jobid]')[0].get_text()
 			job['name'] = name[7:].strip()
-
+			
 			job['location'] = job_ad.select('div[id="location"]')[0].get_text()
 			job['salary'] = job_ad.select('div[id="salary"]')[0].get_text()
 			job['date'] = job_ad.select('div[id="dates"]')[0].get_text()
 			job['url'] = BASE_URL + job_ad.select('div[id="moredetailslink"] a')[0].get('href')
-			
+
 			job_ads_list.append(job)
 		else:
 			break
